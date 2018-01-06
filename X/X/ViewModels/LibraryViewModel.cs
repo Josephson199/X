@@ -17,28 +17,7 @@ namespace X.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly IDataReader _dataReader;
-        //public INavigation Navigation { get; set; }
-
-        //private DataDisplayModel _selectedItem;
-        //public DataDisplayModel SelectedItem { get { return _selectedItem; }
-        //    set
-        //    {
-        //        _selectedItem = value;
-        //        if (_selectedItem == null)
-        //            return;
-
-        //        //Execute(_selectedItem);
-
-        //        SelectedItem = null;
-        //    }
-        //}
-
-        //private async void Execute(DataDisplayModel selectItem)
-        //{
-        //    //new ViewItemPage(selectItem)
-        //    await this.Navigation.PushModalAsync(new ViewItemPage(selectItem));
-        //}
-
+      
         public NotifyTaskCompletion<List<DataDisplayModel>> DataDisplayModels { get; private set; }          
 
         public LibraryViewModel()

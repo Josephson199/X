@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <Label Text="Hello"/>
+        <Label Text="{Binding DataDisplayModel.Result.Body}"/>
 
     </ContentPage.Content>
 </ContentPage>
