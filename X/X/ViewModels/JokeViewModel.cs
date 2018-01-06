@@ -27,7 +27,7 @@ namespace X.ViewModels
             FetchJokeCommand = new Command(FetchJoke);
             StoreJokeCommand = new Command(StoreJoke);
             _jokeLabel = page.FindByName<Label>("LabelJoke");
-            //_restClient = DependencyService.Get<IRestClient>();
+            _restClient = DependencyService.Get<IRestClient>();
             //_persistor = DependencyService.Get<IPersistor>();
             
         }
@@ -91,7 +91,7 @@ namespace X.ViewModels
                 await _jokeLabel.FadeTo(0, 250);
             }
 
-            //Joke = await _restClient.GetJokeAsync();
+            Joke = await _restClient.GetJokeAsync();
             JokeTextColor = ColorPaletteHelper.Red;
             await _jokeLabel.FadeTo(1, 250);
 

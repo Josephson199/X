@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Joke.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Quote.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\QuoteData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RestClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JokeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml.cs">
@@ -39,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">

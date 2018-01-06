@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace X.Models
+﻿namespace X.Models
 {
     public class QuoteData
     {
+        public string Quote { get; set; }
+        public string Author { get; set; }
+        public string Category { get; set; }
     }
 }
