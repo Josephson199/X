@@ -34,7 +34,7 @@ namespace X.Views
 
         private void NavigateToQoutes(object sender, EventArgs e)
         {
-           // Navigation.PushAsync(new QuotePage());
+           Navigation.PushAsync(new QuotePage());
         }
     }
 }

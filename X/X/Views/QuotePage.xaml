@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="X.Views.QuotePage"
+             xmlns:vm="clr-namespace:X.ViewModels"
+             Title="Get Quote Page">
+    <ContentPage.BindingContext>
+        <vm:QuoteViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label 
+                TextColor="{Binding QuoteTextColor}" 
+                Margin="10" 
+                FontSize="36" 
+                Text="{Binding Quote}" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                Grid.ColumnSpan="3" 
+                x:Name="QuoteLabel"/>
+
+            <Label 
+                TextColor="{Binding QuoteTextColor}" 
+                Margin="10" 
+                FontSize="20" 
+                Text="{Binding QuoteAuthor}" 
+                Grid.Column="0" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="3" 
+                x:Name="QuoteAuthorLabel"/>
+
+            <Button 
+                Command="{Binding FetchQuoteCommand}"
+                Grid.Column="0" 
+                Grid.Row="2" 
+                Grid.ColumnSpan="2" 
+                Text="Fetch"
+                x:Name="btnFetchQuote"/>
+
+            <Button 
+                IsVisible="{Binding CanStore}" 
+                Command="{Binding StoreQuoteCommand}"
+                Grid.Column="2" 
+                Grid.Row="2" 
+                Text="Store"
+                x:Name="btnStoreQuote"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
