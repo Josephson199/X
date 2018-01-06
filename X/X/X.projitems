@@ -28,13 +28,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\QuoteData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\JokeRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\QuoteRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NotifyTaskCompletion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Peristor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\RestClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JokeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LibraryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\QuoteViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml.cs">
       <DependentUpon>JokePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LibraryPage.xaml.cs">
+      <DependentUpon>LibraryPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
@@ -60,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\QuotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LibraryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

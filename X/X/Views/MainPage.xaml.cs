@@ -20,7 +20,7 @@ namespace X.Views
 
         private void NavigateToLibrary(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new LibraryPage());
+            Navigation.PushAsync(new LibraryPage());
         }
 
         private void NavigateToJokes(object sender, EventArgs e)

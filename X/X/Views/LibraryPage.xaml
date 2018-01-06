@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="X.Views.LibraryPage"
+             xmlns:vm="clr-namespace:X.ViewModels"
+             Title="Library Page">
+    <ContentPage.BindingContext>
+        <vm:LibraryViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <ListView SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="True" ItemsSource="{Binding DataDisplayModels.Result}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Label FontSize="Large" BackgroundColor="{Binding BgColor}" Text="{Binding Body}">
+
+                        </Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </ContentPage.Content>
+</ContentPage>
