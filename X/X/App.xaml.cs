@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using X.Views;
 using Xamarin.Forms;
 
 namespace X
@@ -13,7 +13,7 @@ namespace X
 		{
 			InitializeComponent();
 
-			MainPage = new X.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
