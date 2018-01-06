@@ -28,7 +28,7 @@ namespace X.ViewModels
             StoreJokeCommand = new Command(StoreJoke);
             _jokeLabel = page.FindByName<Label>("LabelJoke");
             _restClient = DependencyService.Get<IRestClient>();
-            //_persistor = DependencyService.Get<IPersistor>();
+            _persistor = DependencyService.Get<IPersistor>();
             
         }
 
@@ -77,7 +77,7 @@ namespace X.ViewModels
 
         private async void StoreJoke()
         {
-            //await _persistor.StoreJoke(Joke);            
+            await _persistor.StoreJoke(Joke);            
             MessagingCenter.Send(this, "StoredJoke");
             CanStore = false;
             JokeTextColor = ColorPaletteHelper.Blue;
