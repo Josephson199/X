@@ -1,21 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using X.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace X.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LibraryPage : ContentPage
 	{
 		public LibraryPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new LibraryViewModel() { Navigation = Navigation };
+            BindingContext = new LibraryViewModel();
+            ListView.ItemSelected += NavigateToItem;
         }
-	}
+
+        private async void NavigateToItem(object sender, EventArgs e)
+        {
+           await Navigation.PushAsync(new ViewItemPage((DataDisplayModel)ListView.SelectedItem));
+        }
+
+    }
 }

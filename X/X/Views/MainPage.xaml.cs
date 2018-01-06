@@ -18,19 +18,19 @@ namespace X.Views
 
         }
 
-        private void NavigateToLibrary(object sender, EventArgs e)
+        private async void NavigateToLibrary(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LibraryPage());
+            await Navigation.PushAsync(new LibraryPage());
         }
 
-        private void NavigateToJokes(object sender, EventArgs e)
+        private async void NavigateToJokes(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new JokePage());
+            await Navigation.PushAsync(new JokePage());
         }
 
-        private void NavigateToQoutes(object sender, EventArgs e)
+        private async void NavigateToQoutes(object sender, EventArgs e)
         {
-           Navigation.PushAsync(new QuotePage());
+            await Navigation.PushAsync(new QuotePage());
         }
     }
 }

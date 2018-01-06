@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LibraryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\QuoteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml.cs">
       <DependentUpon>JokePage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -50,6 +51,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\QuotePage.xaml.cs">
       <DependentUpon>QuotePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ViewItemPage.xaml.cs">
+      <DependentUpon>ViewItemPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -73,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LibraryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ViewItemPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

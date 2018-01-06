@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-        <ListView SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="True" ItemsSource="{Binding DataDisplayModels.Result}">
+        <ListView x:Name="ListView" HasUnevenRows="True" ItemsSource="{Binding DataDisplayModels.Result}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
