@@ -15,21 +15,40 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorPaletteHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FilePathHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IJokeRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPersistor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IQuoteRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IRestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Joke.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Quote.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\QuoteData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\JokeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml.cs">
+      <DependentUpon>JokePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Repositories\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

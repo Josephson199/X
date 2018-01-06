@@ -29,7 +29,7 @@ namespace X.Views
 
         private void NavigateToJokes(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new JokePage());
+            Navigation.PushAsync(new JokePage());
         }
 
         private void NavigateToQoutes(object sender, EventArgs e)
