@@ -20,7 +20,8 @@ namespace X.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            var dbPath = FileAccessHelper.GetLocalFilePath("database.db3");
+            LoadApplication(new App(dbPath));
         }
     }
 }

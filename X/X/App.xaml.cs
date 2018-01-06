@@ -1,14 +1,15 @@
-﻿using X.Views;
+﻿using X.Helpers;
+using X.Views;
 using Xamarin.Forms;
 
 namespace X
 {
     public partial class App : Application
 	{
-		public App ()
+		public App (string dbPath)
 		{
 			InitializeComponent();
-
+            FilePathHelper.DatabaseFilePath = dbPath;
             MainPage = new NavigationPage(new MainPage());
         }
 
