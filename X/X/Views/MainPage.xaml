@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="X.Views.MainPage"
              xmlns:vm="clr-namespace:X.ViewModels"
-             Title="Mattias Application">
+             Title="Mattias Application"
+             xmlns:me="clr-namespace:X;assembly=X.Android">>
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
@@ -19,9 +20,25 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="BtnNavigateToQuotes" TextColor="White" Grid.Column="0" Grid.Row="0" Text="Quotes"/>
-            <Button x:Name="BtnNavigateToJokes" TextColor="White" Grid.Column="1" Grid.Row="0" Text="Jokes"/>
-            <Button x:Name="BtnNavigateToLibrary" TextColor="White" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="Library"/>
+            <Button 
+                x:Name="BtnNavigateToQuotes" 
+                TextColor="White" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                Text="Quotes"/>
+            <Button 
+                x:Name="BtnNavigateToJokes" 
+                TextColor="White" 
+                Grid.Column="1" 
+                Grid.Row="0" 
+                Text="Jokes"/>
+            <Button 
+                x:Name="BtnNavigateToLibrary" 
+                TextColor="White" 
+                Grid.Column="0" 
+                Grid.Row="1"
+                Grid.ColumnSpan="2" 
+                Text="Library"/>
 
         </Grid>
     </ContentPage.Content>

@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorPaletteHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FilePathHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataItem.cs" />
@@ -90,5 +91,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)CustomElements\" />
   </ItemGroup>
 </Project>

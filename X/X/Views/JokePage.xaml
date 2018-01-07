@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="X.Views.JokePage"
              xmlns:vm="clr-namespace:X.ViewModels"
-             Title="Get Joke Page">
+             Title="Get Joke Page"
+             xmlns:me="clr-namespace:X;assembly=X.Android">
     <ContentPage.BindingContext>
         <vm:JokeViewModel/>
     </ContentPage.BindingContext>
@@ -30,21 +31,31 @@
                 Grid.Column="0" 
                 Grid.ColumnSpan="3"/>
 
-            <Button 
-                Command="{Binding FetchJokeCommand}"
-                Grid.Column="0" 
-                Grid.Row="1" 
-                Grid.ColumnSpan="2" 
-                Text="Fetch"
-                x:Name="btnFetchJoke"/>
+            <me:CustomButton 
+                            Command="{Binding FetchJokeCommand}"
+                            Grid.Column="0" 
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="2" 
+                            Text="Fetch"
+                            x:Name="btnFetchJoke"
+                            CustomBorderRadius="8"
+                            CustomBorderWidth="8"
+                            CustomBorderColor="Black"
+                            CustomBackgroundColor="#7cbb00"
+                            Margin="5" />  
 
-            <Button 
-                IsVisible="{Binding CanStore}" 
-                Command="{Binding StoreJokeCommand}"
-                Grid.Column="2" 
-                Grid.Row="1"  
-                Text="Store"
-                x:Name="btnStoreJoke"/>
+
+            <me:CustomButton x:Name="btnStoreJoke"
+                            CustomBorderRadius="8"
+                            CustomBorderWidth="8"
+                            CustomBorderColor="Black"
+                            CustomBackgroundColor="#ADD8E6"
+                            Grid.Column="2" 
+                            Grid.Row="1" 
+                            Margin="5"
+                            Command="{Binding StoreJokeCommand}"
+                            Text="Store"
+                            IsVisible="{Binding CanStore}" />
 
         </Grid>
     </ContentPage.Content>
