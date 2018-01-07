@@ -13,10 +13,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-
-                        <Label FontSize="Large" BackgroundColor="{Binding BgColor}" Text="{Binding Body}">
-
-                        </Label>
+                        <Frame>
+                        <Label FontSize="Large"  Text="{Binding Body}"/>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

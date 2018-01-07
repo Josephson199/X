@@ -9,7 +9,50 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <Label Text="{Binding DataDisplayModel.Result.Body}"/>
+        
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label 
+                TextColor="{Binding DataDisplayModel.Result.TextColor}" 
+                Margin="10" 
+                FontSize="36" 
+                Text="{Binding DataDisplayModel.Result.Body}" 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                Grid.ColumnSpan="2" 
+                x:Name="QuoteLabel"/>
+
+            <Label 
+                TextColor="{Binding DataDisplayModel.Result.TextColor}" 
+                Margin="10" 
+                FontSize="20" 
+                Text="{Binding DataDisplayModel.Result.Author}" 
+                Grid.Column="0" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="2" 
+                x:Name="QuoteAuthorLabel"/>
+
+            <Button 
+                Command="{Binding DeleteItemCommand}"
+                Grid.Column="0" 
+                Grid.Row="2" 
+                Grid.ColumnSpan="2" 
+                Text="Delete"
+                BackgroundColor="Red"
+                />
+
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using System;
+using X.Helpers;
 using X.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,7 +16,9 @@ namespace X.Views
             BtnNavigateToQuotes.Clicked += NavigateToQoutes;
             BtnNavigateToJokes.Clicked += NavigateToJokes;
             BtnNavigateToLibrary.Clicked += NavigateToLibrary;
-
+            BtnNavigateToQuotes.BackgroundColor = Color.FromHex(ColorPaletteHelper.Blue);
+            BtnNavigateToJokes.BackgroundColor = Color.FromHex(ColorPaletteHelper.Yellow);
+            BtnNavigateToLibrary.BackgroundColor = Color.FromHex(ColorPaletteHelper.Green);
         }
 
         private async void NavigateToLibrary(object sender, EventArgs e)

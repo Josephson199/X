@@ -1,4 +1,5 @@
-﻿using X.ViewModels;
+﻿using X.Models;
+using X.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,11 @@ namespace X.Views
 		public ViewItemPage (DataDisplayModel dataDisplayModel)
 		{
 			InitializeComponent ();
-            BindingContext = new ViewItemViewModel(dataDisplayModel); 
+            MessagingCenter.Subscribe<ViewItemViewModel>(this, "ItemDeleted", (sender) =>
+            {
+                DisplayAlert("Alert", "Item deleted!", "OK");
+            });
+            BindingContext = new ViewItemViewModel(dataDisplayModel, Navigation); 
         }
 	}
 }
