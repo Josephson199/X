@@ -32,6 +32,7 @@
                 Grid.ColumnSpan="3"/>
 
             <me:CustomButton 
+                            IsEnabled="{Binding isFetchJokeEnabled}"
                             Command="{Binding FetchJokeCommand}"
                             Grid.Column="0" 
                             Grid.Row="1" 

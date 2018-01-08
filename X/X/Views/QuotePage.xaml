@@ -43,6 +43,7 @@
                 x:Name="QuoteAuthorLabel"/>
 
             <me:CustomButton 
+                IsEnabled="{Binding IsFetchQuoteEnabled}"
                 Command="{Binding FetchQuoteCommand}"
                 Grid.Column="0" 
                 Grid.Row="2" 

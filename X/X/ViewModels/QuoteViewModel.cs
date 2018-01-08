@@ -35,6 +35,20 @@ namespace X.ViewModels
 
         }
 
+        private bool _isFetchQuoteEnabled = true;
+        public bool IsFetchQuoteEnabled
+        {
+            get
+            {
+                return _isFetchQuoteEnabled;
+            }
+            set
+            {
+                _isFetchQuoteEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _quoteTextColor;
         public string QuoteTextColor
         {
@@ -98,6 +112,13 @@ namespace X.ViewModels
 
         private async void FetchQuote()
         {
+            if (!_isFetchQuoteEnabled)
+            {
+                return;
+            }
+
+            _isFetchQuoteEnabled = false;
+
             await _quoteLabel.FadeTo(0, 250);
             await _quoteAuthorLabel.FadeTo(0, 250);
 
@@ -108,6 +129,8 @@ namespace X.ViewModels
 
             await _quoteAuthorLabel.FadeTo(1, 250);
             await _quoteLabel.FadeTo(1, 250);
+
+            _isFetchQuoteEnabled = true;
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

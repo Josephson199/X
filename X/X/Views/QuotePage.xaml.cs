@@ -6,8 +6,9 @@ namespace X.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuotePage : ContentPage
-	{
-		public QuotePage ()
+    {
+    
+        public QuotePage ()
 		{
             InitializeComponent();
             MessagingCenter.Subscribe<QuoteViewModel>(this, "StoredQuote", (sender) =>

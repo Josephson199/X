@@ -16,7 +16,7 @@ namespace X.ViewModels
         private Label _jokeLabel;
         private readonly IRestClient _restClient;
         private readonly IPersistor _persistor;
-
+       
         public JokeViewModel()
         {
             
@@ -26,10 +26,24 @@ namespace X.ViewModels
         {
             FetchJokeCommand = new Command(FetchJoke);
             StoreJokeCommand = new Command(StoreJoke);
-            _jokeLabel = page.FindByName<Label>("LabelJoke");
+            _jokeLabel = page.FindByName<Label>("LabelJoke");            
             _restClient = DependencyService.Get<IRestClient>();
             _persistor = DependencyService.Get<IPersistor>();
            
+        }
+
+        private bool _isFetchJokeEnabled = true;
+        public bool IsFetchJokeEnabled
+        {
+            get
+            {
+                return _isFetchJokeEnabled;
+            }
+            set
+            {
+                _isFetchJokeEnabled = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _jokeTextColor;
@@ -77,15 +91,23 @@ namespace X.ViewModels
 
         private async void StoreJoke()
         {
+            
             await _persistor.StoreJoke(Joke);            
             MessagingCenter.Send(this, "StoredJoke");
             CanStore = false;
-            JokeTextColor = ColorPaletteHelper.Blue;
+            JokeTextColor = ColorPaletteHelper.Blue;            
         }
 
 
         async void FetchJoke()
         {
+            if (!IsFetchJokeEnabled)
+            {
+                return;
+            }
+
+            IsFetchJokeEnabled = false;
+
             if (Joke != null)
             {
                 await _jokeLabel.FadeTo(0, 250);
@@ -94,6 +116,7 @@ namespace X.ViewModels
             Joke = await _restClient.GetJokeAsync();
             JokeTextColor = ColorPaletteHelper.Red;
             await _jokeLabel.FadeTo(1, 250);
+            IsFetchJokeEnabled = true;
 
         }
 
