@@ -17,8 +17,9 @@ namespace X.Views
             BindingContext = new MainViewModel();
             BtnNavigateToQuotes.Clicked += NavigateToQoutes;
             BtnNavigateToJokes.Clicked += NavigateToJokes;
-            BtnNavigateToLibrary.Clicked += NavigateToLibrary;           
-            MessagingCenter.Send(this, "UpdateTitle");
+            BtnNavigateToLibrary.Clicked += NavigateToLibrary;
+            BtnNavigateToTitleSetter.Clicked += NavigateUpdateTitle;
+            MessagingCenter.Send(this, "GetTitle");
         }
 
         private async void NavigateToLibrary(object sender, EventArgs e)
@@ -36,10 +37,15 @@ namespace X.Views
             await Navigation.PushAsync(new QuotePage());
         }
 
+        private async void NavigateUpdateTitle(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UpdateTitlePage());
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Send(this, "UpdateTitle");
+            MessagingCenter.Send(this, "GetTitle");
         }
     }
 }

@@ -10,41 +10,26 @@ namespace X.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly IApplicationPropertiesService _applicationPropertiesService;
-
-        private string _title;
-        public string Title
-        {
-            get
-            {
-
-                return _title;
-            }
-            set
-            {
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
-
+        public string Title { get; set; }
+       
         public MainViewModel()
         {
             _applicationPropertiesService = DependencyService.Get<IApplicationPropertiesService>();
 
-            MessagingCenter.Subscribe<MainPage>(this, "UpdateTitle", (sender) =>
-            {
-                SetTitle();
-            });
+            //MessagingCenter.Subscribe<MainPage>(this, "GetTitle", (sender) =>
+            //{
+            //    this.Title = _applicationPropertiesService.GetTitle();
+
+            //});
+
+            this.Title = _applicationPropertiesService.GetTitle();
+
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void SetTitle()
-        {
-            this.Title = _applicationPropertiesService.GetTitle();
-        }
+        }       
         
     }
 }

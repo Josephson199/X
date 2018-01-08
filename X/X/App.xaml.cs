@@ -1,4 +1,5 @@
 ﻿using X.Helpers;
+using X.Services;
 using X.Views;
 using Xamarin.Forms;
 
@@ -10,6 +11,7 @@ namespace X
 		{
 			InitializeComponent();
             FilePathHelper.DatabaseFilePath = dbPath;
+            DependencyService.Get<MessageCenterService>().RegisterMessages();
             MainPage = new NavigationPage(new MainPage());
         }
 

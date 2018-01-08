@@ -35,6 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ApplicationPropertiesService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataManipulator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MessageCenterService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\NotifyTaskCompletion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Peristor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\RestClient.cs" />
@@ -42,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LibraryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\QuoteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UpdateTitleViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\JokePage.xaml.cs">
       <DependentUpon>JokePage.xaml</DependentUpon>
@@ -57,6 +59,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\QuotePage.xaml.cs">
       <DependentUpon>QuotePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UpdateTitlePage.xaml.cs">
+      <DependentUpon>UpdateTitlePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ViewItemPage.xaml.cs">
@@ -96,5 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)CustomElements\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\UpdateTitlePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

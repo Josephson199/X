@@ -5,8 +5,9 @@ using X.Interfaces;
 using X.Models;
 using X.Services;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(RestClient))]
+[assembly: Dependency(typeof(RestClient))]
 namespace X.Services
 {
     public class RestClient : IRestClient
