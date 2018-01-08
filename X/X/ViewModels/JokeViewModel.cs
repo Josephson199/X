@@ -19,7 +19,7 @@ namespace X.ViewModels
 
         public JokeViewModel()
         {
-
+            
         }
 
         public JokeViewModel(JokePage page)
@@ -28,8 +28,7 @@ namespace X.ViewModels
             StoreJokeCommand = new Command(StoreJoke);
             _jokeLabel = page.FindByName<Label>("LabelJoke");
             _restClient = DependencyService.Get<IRestClient>();
-            _persistor = DependencyService.Get<IPersistor>();
-            
+            _persistor = DependencyService.Get<IPersistor>();           
         }
 
         private string _jokeTextColor;

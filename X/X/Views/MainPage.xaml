@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="X.Views.MainPage"
              xmlns:vm="clr-namespace:X.ViewModels"
-             Title="Mattias Application"
-             xmlns:me="clr-namespace:X;assembly=X.Android">>
+             Title="{Binding Title}"
+             xmlns:me="clr-namespace:X;assembly=X.Android">
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
@@ -12,6 +12,7 @@
         <Grid>
             <Grid.RowDefinitions >
                 <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -20,25 +21,62 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button 
+            <me:CustomButton  
                 x:Name="BtnNavigateToQuotes" 
                 TextColor="White" 
                 Grid.Column="0" 
                 Grid.Row="0" 
-                Text="Quotes"/>
-            <Button 
+                Text="Quotes"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#ADD8E6"
+                Margin="5"/>
+            <me:CustomButton  
                 x:Name="BtnNavigateToJokes" 
                 TextColor="White" 
                 Grid.Column="1" 
                 Grid.Row="0" 
-                Text="Jokes"/>
-            <Button 
+                Text="Jokes"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#ffbb00"
+                Margin="5"/>
+            <Label 
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="Make your pick!"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                />
+
+            <me:CustomButton  
                 x:Name="BtnNavigateToLibrary" 
                 TextColor="White" 
                 Grid.Column="0" 
-                Grid.Row="1"
-                Grid.ColumnSpan="2" 
-                Text="Library"/>
+                Grid.Row="2"                
+                Text="Library"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#7cbb00"
+                Margin="5"/>
+
+            <me:CustomButton  
+                x:Name="BtnNavigateToTitleSetter" 
+                TextColor="White" 
+                Grid.Column="1" 
+                Grid.Row="2"                
+                Text="Set Title"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#e6bbad"
+                Margin="5"/>
+
 
         </Grid>
     </ContentPage.Content>

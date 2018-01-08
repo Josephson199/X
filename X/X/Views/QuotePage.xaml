@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="X.Views.QuotePage"
              xmlns:vm="clr-namespace:X.ViewModels"
-             Title="Get Quote Page">
+             Title="Get Quote Page"
+             xmlns:me="clr-namespace:X;assembly=X.Android">
     <ContentPage.BindingContext>
         <vm:QuoteViewModel/>
     </ContentPage.BindingContext>
@@ -41,21 +42,31 @@
                 Grid.ColumnSpan="3" 
                 x:Name="QuoteAuthorLabel"/>
 
-            <Button 
+            <me:CustomButton 
                 Command="{Binding FetchQuoteCommand}"
                 Grid.Column="0" 
                 Grid.Row="2" 
                 Grid.ColumnSpan="2" 
                 Text="Fetch"
-                x:Name="btnFetchQuote"/>
+                x:Name="btnFetchQuote"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#ADD8E6"
+                Margin="5"/>
 
-            <Button 
+            <me:CustomButton 
                 IsVisible="{Binding CanStore}" 
                 Command="{Binding StoreQuoteCommand}"
                 Grid.Column="2" 
                 Grid.Row="2" 
                 Text="Store"
-                x:Name="btnStoreQuote"/>
+                x:Name="btnStoreQuote"
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="#7cbb00"
+                Margin="5"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

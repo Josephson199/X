@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)CustomButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorPaletteHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FilePathHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IApplicationPropertiesService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataManipulator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataReader.cs" />
@@ -31,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\QuoteData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\JokeRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repositories\QuoteRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ApplicationPropertiesService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataManipulator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DataReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\NotifyTaskCompletion.cs" />

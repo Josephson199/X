@@ -1,5 +1,6 @@
 ﻿using System;
 using X.Helpers;
+using X.Interfaces;
 using X.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,16 +10,15 @@ namespace X.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage : ContentPage
 	{
+
 		public MainPage ()
 		{
             InitializeComponent();
             BindingContext = new MainViewModel();
             BtnNavigateToQuotes.Clicked += NavigateToQoutes;
             BtnNavigateToJokes.Clicked += NavigateToJokes;
-            BtnNavigateToLibrary.Clicked += NavigateToLibrary;
-            BtnNavigateToQuotes.BackgroundColor = Color.FromHex(ColorPaletteHelper.Blue);
-            BtnNavigateToJokes.BackgroundColor = Color.FromHex(ColorPaletteHelper.Yellow);
-            BtnNavigateToLibrary.BackgroundColor = Color.FromHex(ColorPaletteHelper.Green);
+            BtnNavigateToLibrary.Clicked += NavigateToLibrary;           
+            MessagingCenter.Send(this, "UpdateTitle");
         }
 
         private async void NavigateToLibrary(object sender, EventArgs e)
@@ -34,6 +34,12 @@ namespace X.Views
         private async void NavigateToQoutes(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new QuotePage());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Send(this, "UpdateTitle");
         }
     }
 }

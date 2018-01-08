@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="X.Views.ViewItemPage"
              xmlns:vm="clr-namespace:X.ViewModels"
-             Title="View Item Page">
+             Title="View Item Page"
+             xmlns:me="clr-namespace:X;assembly=X.Android">
     <ContentPage.BindingContext>
         <vm:ViewItemViewModel/>
     </ContentPage.BindingContext>
@@ -43,14 +44,17 @@
                 Grid.ColumnSpan="2" 
                 x:Name="QuoteAuthorLabel"/>
 
-            <Button 
+            <me:CustomButton 
                 Command="{Binding DeleteItemCommand}"
                 Grid.Column="0" 
                 Grid.Row="2" 
                 Grid.ColumnSpan="2" 
                 Text="Delete"
-                BackgroundColor="Red"
-                />
+                CustomBorderRadius="8"
+                CustomBorderWidth="8"
+                CustomBorderColor="Black"
+                CustomBackgroundColor="Red"
+                Margin="5"/>
 
         </Grid>
 
