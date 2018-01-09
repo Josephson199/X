@@ -5,15 +5,12 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.Android", "X\X.Android\X.Android.csproj", "{71215628-1CAC-4C8D-B00C-35ACFBDA4A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.UWP", "X\X.UWP\X.UWP.csproj", "{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "X", "X\X\X.shproj", "{6702EE52-3370-4397-ADAF-E4C717D1B714}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		X\X\X.projitems*{6702ee52-3370-4397-adaf-e4c717d1b714}*SharedItemsImports = 13
 		X\X\X.projitems*{71215628-1cac-4c8d-b00c-35acfbda4a42}*SharedItemsImports = 4
-		X\X\X.projitems*{792569a3-d7ef-4e68-ba5e-e59c0185ff5b}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,26 +47,6 @@ Global
 		{71215628-1CAC-4C8D-B00C-35ACFBDA4A42}.Release|x86.ActiveCfg = Release|Any CPU
 		{71215628-1CAC-4C8D-B00C-35ACFBDA4A42}.Release|x86.Build.0 = Release|Any CPU
 		{71215628-1CAC-4C8D-B00C-35ACFBDA4A42}.Release|x86.Deploy.0 = Release|Any CPU
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|ARM.ActiveCfg = Debug|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|ARM.Build.0 = Debug|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|ARM.Deploy.0 = Debug|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x64.ActiveCfg = Debug|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x64.Build.0 = Debug|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x64.Deploy.0 = Debug|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x86.ActiveCfg = Debug|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x86.Build.0 = Debug|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Debug|x86.Deploy.0 = Debug|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|Any CPU.ActiveCfg = Release|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|ARM.ActiveCfg = Release|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|ARM.Build.0 = Release|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|ARM.Deploy.0 = Release|ARM
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x64.ActiveCfg = Release|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x64.Build.0 = Release|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x64.Deploy.0 = Release|x64
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x86.ActiveCfg = Release|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x86.Build.0 = Release|x86
-		{792569A3-D7EF-4E68-BA5E-E59C0185FF5B}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

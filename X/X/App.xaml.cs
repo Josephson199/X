@@ -1,7 +1,10 @@
-﻿using X.Helpers;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using X.Helpers;
 using X.Services;
 using X.Views;
 using Xamarin.Forms;
+using Microsoft.AppCenter.Crashes;
 
 namespace X
 {
@@ -17,8 +20,11 @@ namespace X
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+            // Handle when your app starts
+            AppCenter.Start("android=92f21cb8-2458-4719-b945-85f92cdd328c;" + "uwp={Your UWP App secret here};" +
+                   "ios={Your iOS App secret here}",
+                   typeof(Analytics), typeof(Crashes));
+        }
 
 		protected override void OnSleep ()
 		{

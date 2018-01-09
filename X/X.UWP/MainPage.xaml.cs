@@ -21,7 +21,8 @@ namespace X.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new X.App());
+            string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+            LoadApplication(new X.App(dbPath));
         }
     }
 }
