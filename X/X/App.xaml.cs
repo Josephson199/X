@@ -5,6 +5,7 @@ using X.Services;
 using X.Views;
 using Xamarin.Forms;
 using Microsoft.AppCenter.Crashes;
+using System.Collections.Generic;
 
 namespace X
 {
@@ -24,6 +25,7 @@ namespace X
             AppCenter.Start("android=92f21cb8-2458-4719-b945-85f92cdd328c;" + "uwp={Your UWP App secret here};" +
                    "ios={Your iOS App secret here}",
                    typeof(Analytics), typeof(Crashes));
+            Analytics.TrackEvent("App.OnStart", new Dictionary<string, string> { { "Start up", $"{nameof(App)}" }, { "Test", "Test" } });
         }
 
 		protected override void OnSleep ()

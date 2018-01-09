@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Microsoft.AppCenter.Analytics;
+using System.Collections.Generic;
 
 namespace X.ViewModels
 {
@@ -112,7 +114,7 @@ namespace X.ViewModels
             {
                 await _jokeLabel.FadeTo(0, 250);
             }
-
+            Analytics.TrackEvent("JokeViewModel.FetchJoke", new Dictionary<string, string> { { $"{nameof(FetchJokeCommand)}", $"{nameof(JokeViewModel)}" }, { "Test", "Test" } });
             Joke = await _restClient.GetJokeAsync();
             JokeTextColor = ColorPaletteHelper.Red;
             await _jokeLabel.FadeTo(1, 250);
