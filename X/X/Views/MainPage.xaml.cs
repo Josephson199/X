@@ -20,6 +20,7 @@ namespace X.Views
             BtnNavigateToLibrary.Clicked += NavigateToLibrary;
             BtnNavigateToTitleSetter.Clicked += NavigateUpdateTitle;
             MessagingCenter.Send(this, "GetTitle");
+           
         }
 
         private async void NavigateToLibrary(object sender, EventArgs e)

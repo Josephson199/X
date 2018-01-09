@@ -21,5 +21,7 @@ namespace X.Views
            await Navigation.PushAsync(new ViewItemPage((DataDisplayModel)ListView.SelectedItem));
         }
 
+     
+
     }
 }

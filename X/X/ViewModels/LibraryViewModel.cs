@@ -1,14 +1,11 @@
 ﻿using X.Helpers;
 using X.Interfaces;
 using X.Services;
-using X.Views;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using X.Models;
 
@@ -24,8 +21,8 @@ namespace X.ViewModels
         public LibraryViewModel()
         {
             _dataReader = DependencyService.Get<IDataReader>();           
-            DataDisplayModels = new NotifyTaskCompletion<List<DataDisplayModel>>(LoadDataAsync());           
-        }      
+            DataDisplayModels = new NotifyTaskCompletion<List<DataDisplayModel>>(LoadDataAsync());   
+        }
 
         async Task<List<DataDisplayModel>> LoadDataAsync()
         {

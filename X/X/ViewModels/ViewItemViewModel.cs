@@ -43,7 +43,7 @@ namespace X.ViewModels
             MessagingCenter.Send(this, "ItemDeleted");
             //this._navigation.RemovePage(this._navigation.NavigationStack[this._navigation.NavigationStack.Count - 1]);
             //await _navigation.PopAsync();
-            await _navigation.PopToRootAsync();
+            await _navigation.PopAsync();
 
         }
 
